@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    border-top: 4px solid #1098ad;
+    color: #444;
+    font-family: sans-serif;
+}
+
+/* App Comp */
+.conatiner {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.main-heading {
+    text-align: center;
+    background-color: #dfdbdb ;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* File Upload Comp */
+.fileupload {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.file-btn {
+    color: #1098ad;
+}
+
+.upload-btn {
+    background-color: #81a7e0;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background-color: #3e659e;
+} 
+
+/* Listing Report */
+.fileReport {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.listing-heading {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Listing Users */
+.listinguser-heading {
+    margin-bottom: 10px;
+}
+
+/* Flex */
+.flexcontainer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.listinguser {
+    flex: 1;
+}
+
+.chart {
+    flex: 1;
+}
