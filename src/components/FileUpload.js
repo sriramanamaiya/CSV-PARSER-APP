@@ -1,4 +1,5 @@
 import React,{ useState } from 'react'
+
 import Papa from 'papaparse'
 
 const FileUpload = (props) => {
@@ -24,8 +25,7 @@ const FileUpload = (props) => {
             Papa.parse(file, {
                 header: true,
                 dynamicTyping:true,
-                complete: function(results){
-                    console.log(results)
+                complete: (results) => {
                     addUserData(results.data)
                 }
             })

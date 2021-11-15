@@ -1,27 +1,25 @@
 import React from 'react'
-import Chart from "react-google-charts"
 
 import ListingUsers from './ListingUsers'
+import ChartComp from './ChartComp'
 
 const ListingReport = (props) => {
     const { userData } = props
 
-    const userDataProp = Object.keys(userData[0])
-
     const userDataFilter = userData.filter((user) => {
-        return user[userDataProp[0]] !== null
+        return user['Name (Original Name)']
     })
 
     const findHost = userData.find((user) => {
-        return user[userDataProp[3]] === 'No'
+        return user['Guest'] === 'No'
     })
 
     const sortArr = userDataFilter.slice(0).sort((a,b) => {
-        return a[userDataProp[2]] - b[userDataProp[2]]
+        return a['Total Duration (Minutes)'] - b['Total Duration (Minutes)']
     })
 
-    const arr = sortArr.map((ele) => {
-        return [ele[userDataProp[0]],ele[userDataProp[2]]]
+    const userChartData = sortArr.map((ele) => {
+        return [ele['Name (Original Name)'],ele['Total Duration (Minutes)']]
     })
     
     return (
@@ -31,24 +29,8 @@ const ListingReport = (props) => {
                 <ListingUsers 
                     userDataFilter={userDataFilter} 
                     findHost={findHost} 
-                    userDataProp={userDataProp}
                 /><br/>
-                <Chart width={'500px'}
-                    height={'300px'}
-                    chartType="Bar"
-                    loader={<div>Loading Chart</div>}
-                    data={[
-                        ['Name of Students', 'Total Minutes Attended']].concat(arr)
-                    }
-                    options={{
-                        colors: ['#b0120a'],
-                        chart: {
-                        title: 'Zoom Report',
-                        subtitle: 'Total Minutes Students Attended',
-                        },
-                    }}
-                    className="chart"
-                />
+                <ChartComp userChartData={userChartData} />
             </div>
         </div>
     )
