@@ -18,7 +18,7 @@ Used Zoom Meeting CSV File in this project.
 ### Features
 
 - CSV Parser:
-  - User can add a Zoom meeting CSV file. Detailed report of zoom meeting like Total Participants in the meeting, Total duration meeting held, Total duration Participants was available in meeting and about Host. Minutes of the meeting participants attended are shown in a bar chart.
+  - User can add a Zoom meeting CSV file. Detailed report of zoom meeting like Total Participants in the meeting, Total duration meeting held, Total duration Participants was available in meeting and about Host. Total Minutes participants attended is shown in a bar chart.
 
 ### Roles and Responsibilities:
   - Used papaparse libary read CSV file and convert CSV file to JSON Object and also react google charts for a bar chart.
